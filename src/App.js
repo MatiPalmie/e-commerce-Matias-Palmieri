@@ -1,11 +1,11 @@
 import './App.css';
 import NavBar from './components/NavBar';
-
-function App() {
+import ItemListContainer from './components/ItemListContainer';
+const App = () => {
   return (
   <>
     <NavBar />
-
+    <ItemListContainer items='Producto'/>
   </>
   );
 }

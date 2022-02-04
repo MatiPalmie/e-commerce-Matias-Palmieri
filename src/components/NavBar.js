@@ -1,3 +1,4 @@
+import CartWidget from "./CartWidget";
 const NavBar = () => {
     return (
         <div className="bar">
@@ -16,6 +17,7 @@ const NavBar = () => {
                 <button className="btn">Periféricos</button>
             </li>
         </ul>
+            <CartWidget />
         </div>
     );
 }
