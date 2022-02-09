@@ -1,9 +1,12 @@
+import ItemCount from "./ItemCount";
+
 const ItemListContainer = ({items}) => {
     return(
         <>
         <ul className="product">
-            <il>{items}</il>
+            <li>{items}</li>
         </ul>
+        <ItemCount stock={5} initial={1} item='Mouse' />
         </>
     )
 }
