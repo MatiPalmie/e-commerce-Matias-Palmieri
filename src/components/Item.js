@@ -1,14 +1,16 @@
-const Item = (name,pictureUrl,description,price) => {
+const Item = ({name, pictureUrl, description, price}) => {
         return (
-        <div>  
-            <h3>{name}</h3>
-            <ul>
-                <li>{pictureUrl}</li>
-                <li>{description}</li>
-                <li>{price}</li>
-            </ul>
-        </div>
-        );
+            <article className="productCard">  
+                <h3>{name}</h3>
+                <figure>
+                    <img src={pictureUrl} alt={name} className="productImg"/>
+                </figure>
+                <ul className="productList">
+                    <li>{description}</li>
+                    <li>${price}</li>
+                </ul>
+            </article>
+        )
 }
 
 export default Item

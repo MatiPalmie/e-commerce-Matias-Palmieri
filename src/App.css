@@ -29,6 +29,9 @@
   color: aliceblue;
   
 }
+.itemList{
+  display: flex;
+}
 .cart{
   max-width: 35px;
 }
@@ -36,7 +39,6 @@
   list-style: none;
 }
 .counter{
-  position: absolute;
   left: 10px;
   width: 300px;
   height: 140px;
@@ -73,4 +75,19 @@
   font-size: 1rem;
   color: rgba(0, 110, 255, 0.555);
 
+}
+.productCard{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.productImg{
+  max-width: 150px;
+  max-height: 150px;
+}
+.productList{
+  list-style: none;
+  text-align: center;
 }
