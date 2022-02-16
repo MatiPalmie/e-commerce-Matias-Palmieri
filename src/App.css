@@ -91,3 +91,25 @@
   list-style: none;
   text-align: center;
 }
+.itemDetail{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1/2fr 1fr;
+  grid-template-areas:"title title"
+                      "img detail";
+  grid-row-gap: 10px;
+}
+.nameDetail{
+  grid-area: title;
+  text-align: center;
+}
+.imgDetail{
+  grid-area: img;
+  max-width: 90%;
+}
+.descriptionDetail{
+  grid-area: detail;
+}
+.priceDetail{
+  grid-area: detail;
+}

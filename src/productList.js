@@ -20,7 +20,8 @@ export const products = [{
         id: 3,
         name: "Combo PC 4",
         pictureUrl: "https://m.media-amazon.com/images/I/71GM05bwraL._AC_SL1500_.jpg",
-        description: "Intel I7 + RTX 3060",
+        description: "Intel I7 + RTX 3060TI",
+        fullDescription:"Es combo cuenta con un poderosisimo procesador Intel I7 9700k, que ofrece lo último en rendimiento, con Turbo para gestionar incluso las tareas más pesadas, los juegos extremos y el multitarea intensivo. ¡Podrá jugar a los últimos videojuegos, ver películas, crear y editar contenido de vídeo, compartir fotos y más! La GeForce RTX™ 3060 Ti y la RTX 3060 te permiten disfrutar de los juegos más recientes con la potencia de Ampere, la segunda generación de la arquitectura RTX de NVIDIA. Logra un rendimiento increíble con los Núcleos Ray Tracing y los Núcleos Tensor mejorados, los nuevos multiprocesadores de streaming y la memoria G6 de alta velocidad. ",
         price: 170000,
     },
 ];
