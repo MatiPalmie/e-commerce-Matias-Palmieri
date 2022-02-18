@@ -5,7 +5,7 @@ const ItemDetail = ({item}) => {
             <img  src={item.pictureUrl} alt={item.name} className="imgDetail" />
             <div className="descriptionDetail">
                 <p>{item.fullDescription}</p>
-                <p>Precio ${item.price}</p>
+                <p>Precio $ {item.price}</p>
             </div>
         </div>
     )

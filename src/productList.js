@@ -1,5 +1,5 @@
 export const products = [{
-        id: 0,
+        idProduct: 0,
         name: "Combo PC 1" ,
         pictureUrl: "https://m.media-amazon.com/images/I/711V5-FgnYL._AC_SL1500_.jpg",
         description: "Intel I3 + GTX 1660 TI" ,
@@ -72,7 +72,7 @@ export const products = [{
 
     },
     {
-        id: 3,
+        id: 8,
         name: "EVGA GeForce RTX 3080 Ti ",
         pictureUrl: "https://m.media-amazon.com/images/I/81B2tCDJWgS._AC_SL1500_.jpg",
         description: "12GB GDDR6X, iCX3 Technology, ARGB LED, placa trasera de metal",

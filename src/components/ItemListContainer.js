@@ -1,8 +1,6 @@
-import ItemCount from "./ItemCount";
 import ItemList from "./ItemList";
 import {getList,products} from "../productList";
 import { useEffect, useState } from "react";
-import OnAdd from "./OnAdd";
 import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
@@ -23,6 +21,8 @@ const ItemListContainer = () => {
                 .catch((e)=>console.log(e))
         }
     },[idCategory]);
+
+    console.log(item)
     
     return(
         <div className="itemList">

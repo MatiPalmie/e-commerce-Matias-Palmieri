@@ -4,6 +4,7 @@ const ItemList = ({list}) => {
     return(
         list.map((item,index) => (
             <Item 
+                id={item.id}
                 key ={index}
                 name={item.name}
                 pictureUrl={item.pictureUrl}
