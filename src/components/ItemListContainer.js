@@ -3,21 +3,30 @@ import ItemList from "./ItemList";
 import {getList,products} from "../productList";
 import { useEffect, useState } from "react";
 import OnAdd from "./OnAdd";
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
 
     const[item,setItem]=useState([]);
+    const {idCategory} = useParams();
+
+    console.log(idCategory);
 
     useEffect(() => {
-        getList(products)
-        .then((resolve)=>setItem(resolve))
-        .catch((e)=>console.log(e));
-    },[]);
+        if(idCategory===undefined){
+            getList(products)
+                .then((resolve)=>setItem(resolve))
+                .catch((e)=>console.log(e))
+        }else{
+            getList(products.filter(item => item.idCategory === parseInt(idCategory)))
+                .then((resolve)=>setItem(resolve))
+                .catch((e)=>console.log(e))
+        }
+    },[idCategory]);
     
     return(
         <div className="itemList">
-        <ItemList list={item}/>
-        <ItemCount stock={5} initial={1} onAdd={OnAdd}/>
+            <ItemList list={item}/>
         </div>
     )
 }

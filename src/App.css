@@ -31,6 +31,9 @@
 }
 .itemList{
   display: flex;
+  flex-wrap: wrap;
+
+
 }
 .cart{
   max-width: 35px;
@@ -77,19 +80,20 @@
 
 }
 .productCard{
+  width:200px;
+  height: 400px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  text-align: center;
 }
 
 .productImg{
-  max-width: 150px;
-  max-height: 150px;
+  max-width:100%;
 }
 .productList{
   list-style: none;
-  text-align: center;
 }
 .itemDetail{
   display: grid;
@@ -112,4 +116,7 @@
 }
 .priceDetail{
   grid-area: detail;
+}
+.logo{
+  max-width: 35%;
 }

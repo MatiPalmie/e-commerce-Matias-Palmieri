@@ -1,21 +1,26 @@
 import {getList,products} from "../productList";
 import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
+import { useParams } from "react-router-dom";
 
 
 const ItemDetailContainer = ()=>{
 
-    const[item,setItem]=useState({});
+    const[product,setProduct]=useState({});
+    const {id} = useParams();
+
+    console.log(id);
 
     useEffect(() => {
-        getList(products[3])
-        .then((resolve)=>setItem(resolve))
+        getList(products.filter(item => item.id === parseInt(id)))
+        .then((resolve)=>setProduct(resolve))
         .catch((e)=>console.log(e));
-    },[]);
-    console.log(item);
+    },[id]);
+
+    console.log(product);
     return(
         <>
-        <ItemDetail item={item}/>
+        <ItemDetail item={product}/>
         </>
     )
 }

@@ -1,7 +1,10 @@
-const Item = ({name, pictureUrl, description, price}) => {
+import { Link } from "react-router-dom";
+
+const Item = ({id,name, pictureUrl, description, price}) => {
         return (
-            <article className="productCard">  
-                <h3>{name}</h3>
+            <Link to={`/item/${id}`}>
+            <article className="productCard">
+                  <h3>{name}</h3>
                 <figure>
                     <img src={pictureUrl} alt={name} className="productImg"/>
                 </figure>
@@ -10,6 +13,7 @@ const Item = ({name, pictureUrl, description, price}) => {
                     <li>${price}</li>
                 </ul>
             </article>
+            </Link>
         )
 }
 

@@ -1,13 +1,8 @@
 import './App.css';
-import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
-import ItemDetailContainer from './components/ItemDetailContainer';
+import Home from './components/Home';
 const App = () => {
   return (
-  <>
-    <NavBar />
-    <ItemDetailContainer/>
-  </>
+    <Home/>
   );
 }
 
