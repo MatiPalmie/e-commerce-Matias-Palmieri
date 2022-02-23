@@ -5,6 +5,7 @@ export const products = [{
         description: "Intel I3 + GTX 1660 TI" ,
         price: 70000,
         idCategory:1,
+        stock: 15,
 
     },{
         id: 1,
@@ -13,6 +14,7 @@ export const products = [{
         description: "Intel I7 + RTX 2050",
         price: 150000,
         idCategory:1,
+        stock: 17,
 
     },{
         id: 2,
@@ -21,6 +23,7 @@ export const products = [{
         description: "Ryzen 3 + RX 580",
         price: 65000,
         idCategory:1,
+        stock: 25,
 
     },{
         id: 3,
@@ -30,6 +33,7 @@ export const products = [{
         fullDescription:"Es combo cuenta con un poderosisimo procesador Intel I7 9700k, que ofrece lo último en rendimiento, con Turbo para gestionar incluso las tareas más pesadas, los juegos extremos y el multitarea intensivo. ¡Podrá jugar a los últimos videojuegos, ver películas, crear y editar contenido de vídeo, compartir fotos y más! La GeForce RTX™ 3060 Ti y la RTX 3060 te permiten disfrutar de los juegos más recientes con la potencia de Ampere, la segunda generación de la arquitectura RTX de NVIDIA. Logra un rendimiento increíble con los Núcleos Ray Tracing y los Núcleos Tensor mejorados, los nuevos multiprocesadores de streaming y la memoria G6 de alta velocidad. ",
         price: 170000,
         idCategory:1,
+        stock: 7,
     },
     {
         id: 4,
@@ -39,6 +43,7 @@ export const products = [{
         fullDescription:"Pantalla IPS QHD de 27 pulgadas (2560 x 1440),Tiempo de respuesta IPS de 1 ms y tasa de actualización de 144 Hz,Compatible con NVIDIA G-SYNC. Tratamiento superficial Haze 25%, 3H",
         price: 45000 ,
         idCategory:2,
+        stock: 54,
 
     },
     {
@@ -49,6 +54,7 @@ export const products = [{
         fullDescription:"Pantalla optimizada: obtén imágenes de alta calidad en una pantalla Full HD con un panel IPS y ángulos de visión ultra anchos de 27 pulgadas (resolución de 1920 x 1080) ",
         price: 34500,
         idCategory:2,
+        stock: 63,
 
     },
     {
@@ -59,6 +65,7 @@ export const products = [{
         fullDescription:"Botones personalizables y memoria integrada: 11 comandos personalizados asignados a los botones y guarda hasta 5 perfiles listos para jugar directamente al ratón. Sensor de 16 K: el sensor de alto rendimiento más preciso de Logitech, con hasta 16.000 DPI para la máxima velocidad, precisión y capacidad de respuesta en todo el rango de DPI. Iluminación RGB programable y tecnología LIGHTSYNC: personalice la iluminación de casi 16,8 millones de colores para que coincida con los colores de su equipo, dedique sus propios colores o sincronice los de otros equipos Logitech G.",
         price: 12000 ,
         idCategory:4,
+        stock: 250,
 
     },
     {
@@ -69,6 +76,7 @@ export const products = [{
         fullDescription:"Iluminación de espectro de colores brillantes:personaliza cinco zonas de iluminación individuales de un espectro de más de 16. 8 millones de colores. Cómodo y duradero: el G213 Prodigy es un teclado de tamaño completo diseñado para juegos y productividad.",
         price:21000 ,
         idCategory:4,
+        stock: 147,
 
     },
     {
@@ -79,6 +87,7 @@ export const products = [{
         fullDescription:"Real Boost Clock:1800MHz; Detalle de la memoria: 12288MB GDDR6X.Trazado de rayos en tiempo real en juegos para gráficos de vanguardia hiperrealistas.Los ventiladores triples + 9 sensores térmicos iCX3 ofrecen un mayor rendimiento de refrigeración y un ruido acústico mucho más silencioso.",
         price: 80000 ,
         idCategory:3,
+        stock: 56,
 
     }
 ];
@@ -87,7 +96,7 @@ export const getList = ( (data) => {
     return new Promise((resolve) => {
         setTimeout( () => {
                 resolve(data);
-        }, 2000)
+        },)
     })
 })
 
