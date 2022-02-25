@@ -1,5 +1,15 @@
-const OnAdd = (count) =>{
-    alert(`Se agregaron ${count} al carrito`);
+import { Link } from "react-router-dom"
+
+const OnAdd = () =>{
+
+    
+    return(
+    <>  
+        <Link to ="/Cart">
+        <button>Ir al Carrito</button>
+        </Link>
+    </>
+    )
 }
 
 export default OnAdd

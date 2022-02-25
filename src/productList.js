@@ -1,5 +1,5 @@
 export const products = [{
-        idProduct: 0,
+        id: 0,
         name: "Combo PC 1" ,
         pictureUrl: "https://m.media-amazon.com/images/I/711V5-FgnYL._AC_SL1500_.jpg",
         description: "Intel I3 + GTX 1660 TI" ,
