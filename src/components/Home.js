@@ -3,8 +3,10 @@ import ItemListContainer from "./ItemListContainer"
 import ItemDetailContainer from "./ItemDetailContainer"
 import NavBar from "./NavBar"
 import Cart from "./Cart"
+import CartContextProvider from "./CartContext"
 const Home = () => {
     return(
+        <CartContextProvider>
         <BrowserRouter>
             <NavBar/>
             <Routes>
@@ -14,6 +16,7 @@ const Home = () => {
                 <Route path="/cart" element={<Cart/>}/>
             </Routes>
         </BrowserRouter>
+        </CartContextProvider>
     )
 }
 
