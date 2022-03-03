@@ -1,20 +1,18 @@
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import Cart from '../assets/cart.png';
 import { CartContext } from './CartContext';
-import { useState } from 'react';
 
 const CartWidget = () => {
     const cart = useContext(CartContext)
 
-    const [counter,setCounter] = useState([false,0]);
 
     return (
-        <>
-        <Link to={"/Cart"}>
-            <img alt="Carrito" className='cart' src={Cart}></img>
-        </Link>
-        </>
+        <div className='cartWidget'>
+        <img alt="Carrito" className='cart' src={Cart}></img>
+        { cart.cartList.length > 0 &&
+        <p>{cart.cartList.length}</p>
+        }
+        </div>
     )
 }
 export default CartWidget;

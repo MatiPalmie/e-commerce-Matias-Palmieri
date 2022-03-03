@@ -6,7 +6,7 @@ const CartContextProvider = ({children})=>{
     const [cartList, setCartList] = useState([]);
 
     const addItem = (item,count) =>{
-        let i = cartList.find(item => item.id === item.id)
+        let i = cartList.find(i => i.id === item.id)
         if( i === undefined){
         setCartList([
             ...cartList,
@@ -28,8 +28,18 @@ const CartContextProvider = ({children})=>{
     const clear = () =>{
         setCartList([])
     }
+    const itemsPrice = (price,count) =>{
+        return price * count
+    }
+    const totalPrice = () =>{
+        let itemTotalPrice = cartList.map(item => itemsPrice(item.price,item.count))
+        console.log(itemTotalPrice)
+        return(
+        itemTotalPrice.reduce((previousValue, currentValue) => previousValue + currentValue)
+        )
+    }
     return (
-        <CartContext.Provider value ={{cartList,addItem,removeItem,clear,}}>
+        <CartContext.Provider value ={{cartList,addItem,removeItem,clear,itemsPrice,totalPrice}}>
             {children}
         </CartContext.Provider>
     )
