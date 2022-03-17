@@ -2,6 +2,8 @@ import {getList,products} from "../productList";
 import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
+import { doc, getDoc } from "firebase/firestore";
+import db from "../firebaseConfig"
 
 
 const ItemDetailContainer = ()=>{
@@ -11,9 +13,18 @@ const ItemDetailContainer = ()=>{
     console.log(id);
 
     useEffect(() => {
-    getList(products[id])
-        .then((resolve)=>setProduct(resolve))
-        .catch((e)=>console.log(e));
+        const customFirestoreFetch = async () => {
+
+            const docRef = doc(db, "productList", id);
+            const docSnap = await getDoc(docRef);
+
+            if (docSnap.exists()) {
+            setProduct(docSnap.data());
+            } else {
+            console.log("No such document!");
+            }
+        }
+        customFirestoreFetch()
     },[id]);
 
     console.log(product);

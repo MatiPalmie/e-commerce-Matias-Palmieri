@@ -1,7 +1,8 @@
 import ItemList from "./ItemList";
-import {getList,products} from "../productList";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import db from "../firebaseConfig"
 
 const ItemListContainer = () => {
 
@@ -12,13 +13,28 @@ const ItemListContainer = () => {
 
     useEffect(() => {
         if(idCategory===undefined){
-            getList(products)
-                .then((resolve)=>setItem(resolve))
-                .catch((e)=>console.log(e))
+            const firestoreFetch = async () => {
+                const querySnapshot = await getDocs(collection(db, "productList"));
+                return querySnapshot.docs.map ( document => ({
+                    id: document.id,
+                    ...document.data()
+            }))
+            };
+            firestoreFetch()
+                .then(result => setItem(result))
+                .catch(error => console.log(error));
         }else{
-            getList(products.filter(item => item.idCategory === parseInt(idCategory)))
-                .then((resolve)=>setItem(resolve))
-                .catch((e)=>console.log(e))
+            const firestoreFetch = async () => {
+                const q = query(collection(db, "productList"), where("idCategory", "==" , parseInt(idCategory)));
+                const querySnapshot = await getDocs(q);
+                return querySnapshot.docs.map ( document => ({
+                    id: document.id,
+                    ...document.data()
+            }))
+            }
+            firestoreFetch()
+                .then((result)=>setItem(result))
+                .catch((error)=>console.log(error))
         }
     },[idCategory]);
 
