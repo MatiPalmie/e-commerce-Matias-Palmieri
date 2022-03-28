@@ -5,7 +5,7 @@ const ItemList = ({list}) => {
         list.map((item,index) => (
             <Item 
                 id={item.id}
-                key ={index}
+                key ={item.key}
                 name={item.name}
                 pictureUrl={item.pictureUrl}
                 description={item.description}

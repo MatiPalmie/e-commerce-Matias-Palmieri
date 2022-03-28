@@ -1,4 +1,3 @@
-import {getList,products} from "../productList";
 import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
@@ -14,17 +13,20 @@ const ItemDetailContainer = ()=>{
 
     useEffect(() => {
         const customFirestoreFetch = async () => {
-
             const docRef = doc(db, "productList", id);
             const docSnap = await getDoc(docRef);
-
             if (docSnap.exists()) {
-            setProduct(docSnap.data());
+                return {
+                    id:id,
+                    ...docSnap.data()
+                }
             } else {
             console.log("No such document!");
             }
         }
         customFirestoreFetch()
+            .then((data) => setProduct(data))
+            .catch(error => console.log(error))
     },[id]);
 
     console.log(product);
