@@ -2,7 +2,7 @@
 # Proyecto e-commerce para el curso de React
 Este proyecto e-commerce, desarrollado para el curso de React que tome en Coderhouse, y en un futuro, como una tienda completamente funcional para el emprendimiento de un amigo. Este proyecto se trata de una SPA de un tienda de articulos informáticos que cuenta con la posibilidad de filtrar los productos por categorias, modificar el stock de acuerdo a las compras realizadas, entre otras funcionalidades que fuimos incluyendole en este curso de React.
 
-https://raw.githubusercontent.com/MatiPalmie/e-commerce-Matias-Palmieri/main/src/assets/home.jpg
+![Imagen del Home de la SPA](https://raw.githubusercontent.com/MatiPalmie/e-commerce-Matias-Palmieri/main/src/assets/home.jpg)
 
 ## Deployment
 
