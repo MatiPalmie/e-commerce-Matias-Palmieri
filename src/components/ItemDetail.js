@@ -5,17 +5,13 @@ import { Link } from "react-router-dom"
 
 const ItemDetail = ({item}) => {   
 
-    const [cartCount,setCartCount] = useState(0)
     const [btn,setBtn] = useState(true);
     const cart = useContext (CartContext);
 
     const onAdd=(count)=>{
-            setCartCount(count)
             setBtn(false)
             cart.addItem(item,count);
     }
-
-    console.log(cart.cartList)
 
     return(
         <div className="itemDetail">
@@ -28,7 +24,7 @@ const ItemDetail = ({item}) => {
                 :
                 <>
                     <Link to ="/cart">
-                        <button>Ir al Carrito</button>
+                        <button className="btn">Ir al Carrito</button>
                     </Link>
                 </>
 }

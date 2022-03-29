@@ -33,7 +33,6 @@ const CartContextProvider = ({children})=>{
     }
     const totalPrice = () =>{
         let itemTotalPrice = cartList.map(item => itemsPrice(item.price,item.count))
-        console.log(itemTotalPrice)
         return(
         itemTotalPrice.reduce((previousValue, currentValue) => previousValue + currentValue)
         )
@@ -43,8 +42,6 @@ const CartContextProvider = ({children})=>{
             {children}
         </CartContext.Provider>
     )
-
-
 }
 
 export default CartContextProvider;

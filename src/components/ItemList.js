@@ -2,7 +2,7 @@ import Item from "./Item";
 
 const ItemList = ({list}) => {
     return(
-        list.map((item,index) => (
+        list.map((item) => (
             <Item 
                 id={item.id}
                 key ={item.key}

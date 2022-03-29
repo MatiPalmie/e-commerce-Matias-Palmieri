@@ -9,7 +9,6 @@ const ItemListContainer = () => {
     const[item,setItem]=useState([]);
     const {idCategory} = useParams();
 
-    console.log(idCategory);
 
     useEffect(() => {
         if(idCategory===undefined){
@@ -38,7 +37,6 @@ const ItemListContainer = () => {
         }
     },[idCategory]);
 
-    console.log(item)
     
     return(
         <div className="itemList">

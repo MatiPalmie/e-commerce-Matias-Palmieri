@@ -9,7 +9,6 @@ const ItemDetailContainer = ()=>{
 
     const[product,setProduct]=useState({});
     const {id} = useParams()
-    console.log(id);
 
     useEffect(() => {
         const customFirestoreFetch = async () => {
@@ -29,7 +28,6 @@ const ItemDetailContainer = ()=>{
             .catch(error => console.log(error))
     },[id]);
 
-    console.log(product);
     return(
         <>
             <ItemDetail item={product}/>

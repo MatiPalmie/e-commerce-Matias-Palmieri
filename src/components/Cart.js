@@ -20,7 +20,6 @@ const Cart = () => {
             }),
             total:cart.totalPrice(),
         };
-        console.log(order)
 
         const createOrderInFirestone = async () => {
             const newOrderRef = doc(collection(db, "orders"))
@@ -46,7 +45,7 @@ const Cart = () => {
         <div className="cartContainer">
         <h1 className="titleCart">Carrito</h1>
 
-        {cart.cartList.length >= 1  ? <button className="clearBtn" onClick={cart.clear}>Vaciar Carrito</button>:<></>}       
+        {cart.cartList.length >= 1  ? <button className="btn clearBtn" onClick={cart.clear}>Vaciar Carrito</button>:<></>}       
 
         {cart.cartList.length > 0 ?
             <>
@@ -61,7 +60,7 @@ const Cart = () => {
                             <p>$ {cart.itemsPrice(item.price,item.count)}</p>
                         </div>
                         <p>Cantidad: {item.count}</p>
-                        <button onClick={() =>cart.removeItem(item.id)}>Eliminar</button>
+                        <button className="btn" onClick={() =>cart.removeItem(item.id)}>Eliminar</button>
                     </div>
                 )
             }
@@ -69,14 +68,14 @@ const Cart = () => {
             <div className="summaryCart">
                 <h3>Resumen de Compra</h3>
                 <h4>Total $ {cart.totalPrice()}</h4>
-                <button onClick={createOrder}>Terminar su Compra</button>
+                <button className="btn" onClick={createOrder}>Terminar su Compra</button>
             </div>
                 
             </>
             :<div className="emptyCart">
                 <p>Su carrito está vacio</p>
                 <Link to={"/"}>
-                    <button>Volver</button>
+                    <button className="btn">Volver</button>
                 </Link>
             </div>
         }
